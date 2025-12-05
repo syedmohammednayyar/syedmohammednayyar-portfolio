@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="bg-grey">
+    <nav class="navbar">
+      <div class="logo">SMN</div>
+      <ul class="navlist" id="navlist">
+        <li><a href="#Home" class="nav">Home</a></li>
+        <li><a href="#About-Me" class="nav">About Me</a></li>
+        <li><a href="#My-Skills" class="nav">My Skills</a></li>
+        <li><a href="#Qualification" class="nav">Qualifications</a></li>
+        <li><a href="#Projects" class="nav">Projects</a></li>
+        <li><a href="#Contact-Me" class="primary-btn">Contact Me</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+  <section class="hero-section bg-grey" id="Home">
+    <div class="container">
+      <div class="row-container">
+        <div class="hero-container">
+          <h1>I'm a <span class="typed-text"></span></h1>
+          <p>Open-source enthusiast and software developer, passionate about collaborating on meaningful projects that deliver innovative solutions.</p>
+          <div class="actions">
+            <a href="assets/Resume.pdf" class="primary-btn" download>Download Resume</a>
+            <a href="#Contact-Me" class="primary-btn" data-type="inverted-btn">Contact Me</a>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="assets/icon.png" alt="profile" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- About Me Section -->
+<section class="section-AB bg-light-pink" id="About-Me">
+  <div class="container">
+    <div class="row-container-AB">
+
+      <!-- Social Media -->
+      <div class="social-media-container">
+        <div class="social-icons">
+          <div class="card">
+            <a href="https://www.instagram.com/syed_mohammed_nayyar/" target="_blank">
+              <i class="fa-brands fa-instagram fill-pink"></i>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://www.linkedin.com/in/syedmohammednayyar" target="_blank">
+              <i class="fa-brands fa-linkedin fill-pink"></i>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://github.com/syedmohammednayyar" target="_blank">
+              <i class="fa-brands fa-github fill-pink"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Content -->
+      <div class="content">
+        <h3>My Intro</h3>
+        <h1>About Me</h1>
+
+        <p class="edit-p">
+          Hi! 👋 I'm Syed Mohammed Nayyar, an aspiring software developer with a strong foundation in web development and Python programming.
+        </p>
+
+        <br>
+
+        <p class="edit-p">
+          I recently completed training in front-end and back-end technologies, gaining hands-on experience through academic and personal projects.
+        </p>
+
+        <br>
+
+        <p class="edit-p">
+          I hold a Bachelor of Computer Applications degree and have strengthened my skills through certifications and industrial training.
+        </p>
+
+        <br>
+
+        <p class="edit-p">
+          <strong>Interests:</strong><br>
+          • Learning Data Science<br>
+          • Exploring New Frameworks<br>
+          • Diving into Machine Learning and Artificial Intelligence
+        </p>
+
+        <br>
+
+        <p class="edit-p">
+          I’m eager to join a collaborative and innovative team where I can grow, apply my skills, and contribute to meaningful software projects.
+          
+        </p>
+
+        <ul class="information">
+          <li class="detail"><i class="fa-solid fa-user fill-pink"></i> Name: Syed Mohammed Nayyar</li>
+          <li class="detail"><i class="fa-solid fa-phone fill-pink"></i> Phone: 9980167658</li>
+          <li class="detail"><i class="fa-solid fa-envelope fill-pink"></i> Email: syednayyar658@gmail.com</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Skills Section -->
+    <section class="skill-section" id="My-Skills">
+      <div class="skills-container">
+        <h2>My Skills</h2>
+        <div id="skills-cards">
+          <div class="skill-card"><i class="fas fa-code"></i><span>MERN</span></div>
+          <div class="skill-card"><i class="fas fa-laptop-code"></i><span>Full Stack</span></div>
+          <div class="skill-card"><i class="fas fa-database"></i><span>MongoDB</span></div>
+          <div class="skill-card"><i class="fas fa-server"></i><span>Express.js</span></div>
+          <div class="skill-card"><i class="fab fa-react"></i><span>React.js</span></div>
+          <div class="skill-card"><i class="fab fa-node"></i><span>Node.js</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualification Section -->
+    <section class="qualification-section bg-grey" id="Qualification">
+      <div class="container-QS">
+        <div class="column-container">
+          <h1>Qualifications</h1>
+        </div>
+        <div class="qualification-grid">
+          <div class="qualification">
+            <i class="fas fa-graduation-cap"></i>
+            <h3><center>Bachelor of Computer Application</center></h3>
+            <p>Adichunchanagiri Institute Of Business Management, Karnataka</p>
+            <span class="year">2021 - 2024</span>
+          </div>
+          <div class="qualification">
+            <i class="fas fa-university"></i>
+            <h3><center>Pre University</center></h3>
+            <p>MES Pu College, Karnataka</p>
+            <p>Computer Science</p>
+            <span class="year">2019 - 2021</span>
+          </div>
+          <div class="qualification">
+            <i class="fas fa-school"></i>
+            <h3><center>School</center></h3>
+            <p>JVS High School, Karnataka</p>
+            <p>S.S.L.C</p>
+            <span class="year">2018 - 2019</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+<section class="projects bg-light-pink" id="Projects">
+  <div class="column-container">
+    <div class="content">
+      <h1>Projects</h1>
+    </div>
+  </div>
+
+  <div class="container-pro">
+
+    <!-- Exam Monitoring System -->
+     
+    <div class="card">
+      
+      <img class="background" src="assets/EMS_img.png" alt="EMS" />
+      <div class="card-content">
+        <div class="profile-image">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml">
+          <path d="m18 16 4-4-4-4" />
+          <path d="m6 8-4 4 4 4" />
+          <path d="m14.5 4-5 16" />
+        </svg>
+        </div>
+        
+        <h3 class="title">Exam Monitoring System</h3>
+        
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+    <!-- Portfolio Website -->
+    <div class="card">
+      <img class="background" src="assets/portfolio_img.png" alt="Portfolio" />
+      <div class="card-content">
+        <div class="profile-image">
+         <svg  width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-code-xml">
+                                <path d="m18 16 4-4-4-4" />
+                                <path d="m6 8-4 4 4 4" />
+                                <path d="m14.5 4-5 16" />
+            </svg>
+        </div>
+        <h3 class="title">Portfolio Website</h3>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+    <!-- Object Detection -->
+    <div class="card" >
+      <img class="background" src="assets/Object_Dectection_img.png" alt="Object Detection" />
+      <div class="card-content">
+        <div class="profile-image">
+          <svg  width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-code-xml">
+                                <path d="m18 16 4-4-4-4" />
+                                <path d="m6 8-4 4 4 4" />
+                                <path d="m14.5 4-5 16" />
+            </svg>
+        </div>
+        <h3 class="title">Object Detection</h3>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+    <!-- Eye Blink Detection -->
+    <div class="card">
+      <img class="background" src="assets/Eye_Blink_img.png" alt="Eye Blink Detection" />
+      <div class="card-content">
+        <div class="profile-image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml">
+          <path d="m18 16 4-4-4-4" />
+          <path d="m6 8-4 4 4 4" />
+          <path d="m14.5 4-5 16" />
+        </svg>
+        </div>
+        <h3 class="title">Eye Blink Detection</h3>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+    <!-- More Projects -->
+    <div class="card" >
+      <img class="background" src="assets/More_project_img.png" alt="More Projects" />
+      <div class="card-content">
+        <div class="profile-image">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml">
+            <path d="m18 16 4-4-4-4" />
+            <path d="m6 8-4 4 4 4" />
+            <path d="m14.5 4-5 16" />
+          </svg>
+        </div>
+        <h3 class="title">More Projects</h3>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Contact Me -->
+
+        <section class="section bg-white" id="Contact-Me">
+            <div class="container">
+                <div class="column-container">
+                    <div class="content">
+                        <h3>Contact Me</h3>
+                        <h1>Get In Touch</h1>
+                    </div>
+                    <form action="https://sheetdb.io/api/v1/y5z15yqd31bly" method="POST" class="form" id="contactform">
+                        <input type="text" name="username" placeholder="Name" id="username" required>
+                        <input type="text" name="phone" placeholder="Phone Number" id="phone" required>
+                        <input type="email" name="email" placeholder="Email Address" id="email" required>
+                        <textarea name="message" placeholder="Type your Message Here" id="message" rows="5" ></textarea>
+                        <input type="submit" value="Send Message" class="primary-btn" >
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer section -->
+
+    <footer class="footer-section bg-black">
+        <div class="container">
+            <p class="para fill-white">Copyright &copy; Syed Mohammed Nayyar. All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
