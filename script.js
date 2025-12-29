@@ -1,83 +1,98 @@
+(() => {
+  const texts = ["Software Developer", "Web Developer"];
+  let tIndex = 0, charIndex = 0, isDeleting = false;
+  const TYPING_SPEED = 150;
+  const DELETING_SPEED = 50;
+  const PAUSE = 1000;
+  const typedTextEl = document.querySelector('.typed-text');
 
+  function typeStep() {
+    const current = texts[tIndex];
+    if (!typedTextEl) return;
 
- const texts = ["Software Developer", "Web Developer"];
-    let i = 0, j = 0, currentText = "", isDeleting = false;
-    const typedText = document.querySelector(".typed-text");
-
-    function type() {
-      if (i < texts.length) {
-        if (!isDeleting && j <= texts[i].length) {
-          currentText = texts[i].substring(0, j++);
-        } else if (isDeleting && j >= 0) {
-          currentText = texts[i].substring(0, j--);
-        }
-
-        typedText.textContent = currentText;
-
-        if (!isDeleting && j === texts[i].length) {
-          isDeleting = true;
-          setTimeout(type, 1000);
-          return;
-        } else if (isDeleting && j === 0) {
-          isDeleting = false;
-          i = (i + 1) % texts.length;
-        }
-
-        setTimeout(type, isDeleting ? 50 : 150);
+    if (!isDeleting) {
+      charIndex = Math.min(charIndex + 1, current.length);
+      typedTextEl.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        isDeleting = true;
+        setTimeout(typeStep, PAUSE);
+        return;
+      }
+    } else {
+      charIndex = Math.max(charIndex - 1, 0);
+      typedTextEl.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        isDeleting = false;
+        tIndex = (tIndex + 1) % texts.length;
       }
     }
 
-    document.addEventListener("DOMContentLoaded", type);
+    setTimeout(typeStep, isDeleting ? DELETING_SPEED : TYPING_SPEED);
+  }
 
-// Add this to a script tag in your HTML or a separate JS file
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navlist = document.querySelector('.navlist');
-    
-    if (hamburger && navlist) {
-        hamburger.addEventListener('click', function() {
-            navlist.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a nav link
-        const navLinks = document.querySelectorAll('.navlist a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navlist.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!hamburger.contains(e.target) && !navlist.contains(e.target)) {
-                navlist.classList.remove('active');
-            }
-        });
+  function setupNav() {
+    const hamburger = document.getElementById('hamburger');
+    const navlist = document.getElementById('navlist');
+    if (!hamburger || !navlist) return;
+
+    function toggleNav() {
+      const active = navlist.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', active ? 'true' : 'false');
     }
-});
 
-
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", function() {
-        window.open("https://github.com/syedmohammednayyar?tab=repositories", "_blank"); // Opens link in a new tab
+    hamburger.addEventListener('click', toggleNav);
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleNav(); }
     });
-});
 
- var form = document.getElementById('contactform');
- form.addEventListener('submit', e => {
- e.preventDefault();
- fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-  })
-  .then(response => response.text())
-  .then(text => {
-    console.log(text);
-    alert('Submitted !! Thank you ' + document.getElementById("username").value + ' I will get back to you soon.');
-    form.reset();
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was an error sending your message. Please try again later.');
+    navlist.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlist.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }));
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navlist.contains(e.target)) {
+        navlist.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  function setupCards() {
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        window.open('https://github.com/syedmohammednayyar?tab=repositories', '_blank', 'noopener');
+      });
+    });
+  }
+
+  function setupForm() {
+    const form = document.getElementById('contactform');
+    if (!form) return;
+    const submitBtn = form.querySelector('input[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitBtn) submitBtn.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        if (!res.ok) throw new Error('Network response was not ok');
+        alert('Submitted! Thank you ' + (form.username?.value || '') + '. I will get back to you soon.');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        alert('There was an error sending your message. Please try again later.');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typedTextEl) typeStep();
+    setupNav();
+    setupCards();
+    setupForm();
   });
-});
+})();

@@ -27,8 +27,8 @@
         <li><a href="#Projects" class="nav">Projects</a></li>
         <li><a href="#Contact-Me" class="primary-btn">Contact Me</a></li>
       </ul>
-      <div class="hamburger" id="hamburger">
-        <i class="fa-solid fa-bars"></i>
+      <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation" aria-expanded="false" tabindex="0">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </div>
     </nav>
   </header>
@@ -62,19 +62,19 @@
       <!-- Social Media -->
       <div class="social-media-container">
         <div class="social-icons">
-          <div class="card">
-            <a href="https://www.instagram.com/syed_mohammed_nayyar/" target="_blank">
-              <i class="fa-brands fa-instagram fill-pink"></i>
+          <div class="social-card">
+            <a href="https://www.instagram.com/syed_mohammed_nayyar/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram fill-pink" aria-hidden="true"></i>
             </a>
           </div>
-          <div class="card">
-            <a href="https://www.linkedin.com/in/syedmohammednayyar" target="_blank">
-              <i class="fa-brands fa-linkedin fill-pink"></i>
+          <div class="social-card">
+            <a href="https://www.linkedin.com/in/syedmohammednayyar" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin fill-pink" aria-hidden="true"></i>
             </a>
           </div>
-          <div class="card">
-            <a href="https://github.com/syedmohammednayyar" target="_blank">
-              <i class="fa-brands fa-github fill-pink"></i>
+          <div class="social-card">
+            <a href="https://github.com/syedmohammednayyar" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github fill-pink" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -289,11 +289,11 @@
                         <h1>Get In Touch</h1>
                     </div>
                     <form action="https://sheetdb.io/api/v1/y5z15yqd31bly" method="POST" class="form" id="contactform">
-                        <input type="text" name="username" placeholder="Name" id="username" required>
-                        <input type="text" name="phone" placeholder="Phone Number" id="phone" required>
-                        <input type="email" name="email" placeholder="Email Address" id="email" required>
-                        <textarea name="message" placeholder="Type your Message Here" id="message" rows="5" ></textarea>
-                        <input type="submit" value="Send Message" class="primary-btn" >
+                      <input type="text" name="username" aria-label="Name" placeholder="Name" id="username" required>
+                      <input type="text" name="phone" aria-label="Phone Number" placeholder="Phone Number" id="phone" required>
+                      <input type="email" name="email" aria-label="Email Address" placeholder="Email Address" id="email" required>
+                      <textarea name="message" aria-label="Message" placeholder="Type your Message Here" id="message" rows="5" ></textarea>
+                      <input type="submit" value="Send Message" class="primary-btn" >
                     </form>
 
                 </div>
